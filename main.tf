@@ -19,7 +19,7 @@ variable "ssh_username" {
 }
 
 provider "google" {
-    credentials = {
+    credentials = "{
   "type": "service_account",
   "project_id": "zippy-starlight-272212",
   "private_key_id": "6c07cc1062e84e1c31568621ef968c174189d3be",
@@ -30,7 +30,7 @@ provider "google" {
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sharko%40zippy-starlight-272212.iam.gserviceaccount.com"
-}
+}"
     project = var.project_name
     region = var.region
 }
