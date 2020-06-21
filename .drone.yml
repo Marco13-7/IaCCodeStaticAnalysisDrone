@@ -16,6 +16,7 @@ steps:
   image: hashicorp/terraform
   commands:
   - terraform plan -var-file=config.tfvars
+  - terraform apply -var-file=config.tfvars
 - name: static code analysis with tflint
   image: wata727/tflint
   commands:
@@ -24,3 +25,7 @@ steps:
   image: hashicorp/terraform
   commands:
   - terraform output ips_appservers 
+- name: terrafrom output 
+  image: hashicorp/terraform
+  commands:
+  - terraform destroy -var-file=config.tfvars
