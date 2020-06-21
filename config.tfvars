@@ -1,0 +1,5 @@
+project_name = "zippy-starlight-272212"  
+region = "europe-west"
+zone = "europe-west3-a"
+ssh_pub_key_path = "~/.ssh/gcloud.pub"
+ssh_username =  "Marco"
