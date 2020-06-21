@@ -7,4 +7,4 @@ steps:
 - name: static code analysis with tflint
   image: wata727/tflint
   commands:
-  - tflint
+  - tflint appserver.tf
