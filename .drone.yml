@@ -3,16 +3,8 @@ kind: pipeline
 type: docker
 name: default
 
-steps:
-- name: validate config File
-  image: hashicorp/terraform
-  commands:
-   - terraform validate  
+steps: 
 - name: static code analysis with tflint
   image: wata727/tflint
   commands:
   - tflint
-- name: plan terraform
-  image: hashicorp/terraform
-  commands:
-  - terraform plan -var-file=config.tfvars
