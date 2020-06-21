@@ -20,3 +20,7 @@ steps:
   image: wata727/tflint
   commands:
   - tflint
+- name: terrafrom output 
+  image: hashicorp/terraform
+  commands:
+  - terraform output ips_appservers 
