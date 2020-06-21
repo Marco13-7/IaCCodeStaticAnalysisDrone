@@ -19,7 +19,7 @@ variable "ssh_username" {
 }
 
 provider "google" {
-    credentials = file("My First Project-6c07cc1062e8.json")
+    credentials = file("credentials/My First Project-6c07cc1062e8.json")
     project = var.project_name
     region = var.region
 }
