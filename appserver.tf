@@ -1,18 +1,3 @@
-resource "google_compute_firewall" "fw_allow_http" {
-    name = "fw-allow-http"
-    network = "default"
-
-    allow {
-        protocol = "tcp"
-        ports = ["80", "8080"]
-    }
-
-    source_ranges = ["0.0.0.0/0"]
-    source_tags = ["web"]
-
-    target_tags = ["http"]
-}
-
 resource "google_compute_instance" "appserver" {
     name = "appserver-vm-${count.index}"
     count = 2
