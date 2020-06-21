@@ -8,6 +8,13 @@ steps:
   image: hashicorp/terraform
   commands:
   - terraform init
+- name: terrafrom validate
+  image: hashicorp/terraform
+  commands:
+  - terraform validate
+- name: terrafrom plan
+  image: hashicorp/terraform
+  commands:
   - terraform plan -var-file=config.tfvars
 - name: static code analysis with tflint
   image: wata727/tflint
