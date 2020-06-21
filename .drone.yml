@@ -4,7 +4,12 @@ type: docker
 name: default
 
 steps: 
+- name: terrafrom init
+  image: hashicorp/terraform
+  commands:
+  - terraform init
+  - terraform plan -var-file=config.tfvars
 - name: static code analysis with tflint
   image: wata727/tflint
   commands:
-  - tflint appserver.tf
+  - tflint
