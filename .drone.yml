@@ -16,14 +16,14 @@ steps:
   image: hashicorp/terraform
   commands:
   - terraform plan -var-file=config.tfvars
-- name: terrafrom apply
-  image: hashicorp/terraform
-  commands:
-  - terraform apply -var-file=config.tfvars -auto-approve
 - name: static code analysis with tflint
   image: wata727/tflint
   commands:
   - tflint
+- name: terrafrom apply
+  image: hashicorp/terraform
+  commands:
+  - terraform apply -var-file=config.tfvars -auto-approve
 - name: terrafrom output 
   image: hashicorp/terraform
   commands:
