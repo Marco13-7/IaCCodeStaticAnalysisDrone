@@ -36,11 +36,7 @@ resource "google_compute_instance" "appserver" {
             image = "debian-cloud/debian-10"
         }
     }
-
-    metadata = {
-        ssh-keys = "${var.ssh_username}:${file(var.ssh_pub_key_path)}"
-    }
-
+    
     network_interface {
         network = "default"
         access_config {
