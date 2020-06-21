@@ -25,7 +25,7 @@ steps:
   image: hashicorp/terraform
   commands:
   - terraform output ips_appservers 
-- name: terrafrom output 
+- name: terrafrom destroy 
   image: hashicorp/terraform
   commands:
   - terraform destroy -var-file=config.tfvars
