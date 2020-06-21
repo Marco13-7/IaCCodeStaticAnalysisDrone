@@ -1,15 +1,3 @@
-resource "google_compute_firewall" "fw_allow_ssh" {
-    name = "fw-allow-ssh"
-    network = "default"
-
-    allow {
-        protocol = "tcp"
-        ports = ["23"]
-    }
-
-    target_tags = ["ssh"]
-}
-
 resource "google_compute_firewall" "fw_allow_http" {
     name = "fw-allow-http"
     network = "default"
@@ -28,7 +16,7 @@ resource "google_compute_firewall" "fw_allow_http" {
 resource "google_compute_instance" "appserver" {
     name = "appserver-vm-${count.index}"
     count = 2
-    machine_type = "f1-microX"
+    machine_type = "f1-micro"
     zone = var.zone
 
     boot_disk {
