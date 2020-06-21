@@ -28,7 +28,7 @@ resource "google_compute_firewall" "fw_allow_http" {
 resource "google_compute_instance" "appserver" {
     name = "appserver-vm-${count.index}"
     count = 2
-    machine_type = "f1-micro"
+    machine_type = "f1-microX"
     zone = var.zone
 
     boot_disk {
