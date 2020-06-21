@@ -6,12 +6,9 @@ name: default
 steps: 
 - name: terrafrom init
   image: hashicorp/terraform
-  environment:
-    GOOGLE:
-      from_secret: google_api_token
   commands:
   - terraform init
-  - terraform plan -var-file=config.tfvars -var 'google_credentials=$GOOGLE'
+  - terraform plan -var-file=config.tfvars
 - name: static code analysis with tflint
   image: wata727/tflint
   commands:
