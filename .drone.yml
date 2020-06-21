@@ -1,14 +1,14 @@
 ---
 kind: pipeline
 type: docker
-name: default
+name: CI/CD Terraform validate and test Server
 
 steps: 
 - name: terrafrom init
   image: hashicorp/terraform
   commands:
   - terraform init
-- name: terrafrom validate
+- name: validate configuration
   image: hashicorp/terraform
   commands:
   - terraform validate
@@ -16,11 +16,11 @@ steps:
   image: hashicorp/terraform
   commands:
   - terraform plan -var-file=config.tfvars
-- name: static code analysis with tflint
+- name: static code analysis tflint
   image: wata727/tflint
   commands:
   - tflint
-- name: terrafrom apply
+- name: apply servers
   image: hashicorp/terraform
   commands:
   - terraform apply -var-file=config.tfvars -auto-approve
@@ -28,7 +28,7 @@ steps:
   image: hashicorp/terraform
   commands:
   - terraform output ips_appservers 
-- name: terrafrom destroy appserver
+- name: destroy servers
   image: hashicorp/terraform
   commands:
   - terraform destroy -var-file=config.tfvars -auto-approve
