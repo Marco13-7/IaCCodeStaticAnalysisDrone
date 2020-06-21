@@ -16,7 +16,8 @@ steps:
   image: hashicorp/terraform
   commands:
   - terraform plan -var-file=config.tfvars
-  - terraform apply -var-file=config.tfvars
+  - terraform apply -var-file=config.tfvars -auto-approve
+  - yes
 - name: static code analysis with tflint
   image: wata727/tflint
   commands:
@@ -28,4 +29,4 @@ steps:
 - name: terrafrom destroy 
   image: hashicorp/terraform
   commands:
-  - terraform destroy -var-file=config.tfvars
+  - terraform destroy -var-file=config.tfvars -auto-approve
