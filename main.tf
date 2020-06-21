@@ -18,10 +18,6 @@ variable "ssh_username" {
     type = string
 }
 
-variable "google_credentials" {
-    type = string
-}
-
 provider "google" {
     credentials = {
   "type": "service_account",
