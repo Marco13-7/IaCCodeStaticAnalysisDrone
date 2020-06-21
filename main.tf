@@ -18,8 +18,12 @@ variable "ssh_username" {
     type = string
 }
 
+variable "google_credentials" {
+    type = string
+}
+
 provider "google" {
-    credentials = "${file("My_First_Project-6c07cc1062e8.json")}"
+    credentials = var.google_credentials
     project = var.project_name
     region = var.region
 }
