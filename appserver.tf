@@ -1,5 +1,5 @@
 resource "google_compute_instance" "appserver" {
-    nam = "appserver-vm-${count.index}"
+    name = "appserver-vm-${count.index}"
     count = 2
     machine_type = "f1-micro"
     zone = var.zone
